@@ -1,9 +1,10 @@
-package com.example.diturrizaga.myfirstapp
+package com.example.diturrizaga.myfirstapp.Test
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import com.example.diturrizaga.myfirstapp.R
 
 data class Course(val nombre: String, val url:String)
 
@@ -11,8 +12,8 @@ class FirstKotlinTest : AppCompatActivity() {
 
 
 
-    val java = Course("Java","java.com")
-    val kotlin = Course("Kotlin","kotlin.com")
+    val java = Course("Java", "java.com")
+    val kotlin = Course("Kotlin", "kotlin.com")
     var currentCourse = java.copy()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +31,7 @@ class FirstKotlinTest : AppCompatActivity() {
 
      }
 
-    fun switchCurso(course:Course){
+    fun switchCurso(course: Course){
         currentCourse = course.copy()
         when(currentCourse.url){
             "java.com" -> currentCourse = kotlin.copy()
