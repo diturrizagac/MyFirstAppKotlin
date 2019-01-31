@@ -1,4 +1,4 @@
-package com.example.diturrizaga.myfirstapp.Test
+package com.example.diturrizaga.myfirstapp.packageIgnored
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle

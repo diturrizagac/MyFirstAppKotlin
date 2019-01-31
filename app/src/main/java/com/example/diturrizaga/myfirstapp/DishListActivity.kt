@@ -3,6 +3,9 @@ package com.example.diturrizaga.myfirstapp
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.ListView
+import com.example.diturrizaga.myfirstapp.adapter.DishAdapter
+import com.example.diturrizaga.myfirstapp.data.DishData
+import com.example.diturrizaga.myfirstapp.model.Dish
 
 
 class DishListActivity : AppCompatActivity(), PlaceSelectedListener{
@@ -20,11 +23,14 @@ class DishListActivity : AppCompatActivity(), PlaceSelectedListener{
     }
 
     fun retrieveDish(){
-
-        dishes = Dish.getAllDishes()
+        dishes = DishData.getAllDishes()
+        val dishAdapter = DishAdapter(dishes!!, this, this)
+        dishListView!!.adapter = dishAdapter
     }
 
-    override fun goToView(dish: Dish) {
 
+    override fun goToView(dish: Dish) {
+        val bundle = Bundle()
+        bundle.putSerializable("DISH", dish)
     }
 }

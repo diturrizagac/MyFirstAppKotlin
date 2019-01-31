@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         val showDishesBtn = findViewById<Button>(R.id.showMeDishesBtn)
 
         showDishesBtn.setOnClickListener {
-            val intent = Intent(this@MainActivity, DishListActivity::class.java)
+            val intent = Intent(this, DishListActivity::class.java)
             startActivity(intent)
         }
     }
