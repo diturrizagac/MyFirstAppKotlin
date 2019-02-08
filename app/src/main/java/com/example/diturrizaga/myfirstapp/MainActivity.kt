@@ -1,7 +1,7 @@
 package com.example.diturrizaga.myfirstapp
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         showDishesBtn.setOnClickListener {
             val intent = Intent(this, DishListActivity::class.java)
             startActivity(intent)
+
         }
     }
 

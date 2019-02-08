@@ -1,13 +1,75 @@
 package com.example.diturrizaga.myfirstapp
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import android.widget.ImageView
+import android.widget.TextView
+import com.example.diturrizaga.myfirstapp.model.Dish
+import java.io.IOException
+import java.io.InputStream
+import android.content.Intent
 
-class DishDetailsActivity : AppCompatActivity() {
+
+
+class DishDetailsActivity : AppCompatActivity(){
+
+    private var currentDish : Dish? = null
+    var titleTvi : TextView? = null
+    var descriptionTvi : TextView? = null
+    var imageIvi : ImageView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dish_details)
+        extras()
+        ui()
+        populate()
+
     }
+
+    private fun extras(){
+        if (intent != null && intent.extras != null) {
+            currentDish = intent.extras!!.getSerializable("DISH") as Dish
+        }
+    }
+
+    private fun ui(){
+        //enabledBack()
+        titleTvi = findViewById(R.id.dishTitleDetailTv)
+        descriptionTvi = findViewById(R.id.dishDescDetailTv)
+        imageIvi = findViewById(R.id.dishImageDetailIv)
+
+    }
+
+    private fun populate(){
+
+        if (currentDish != null) {
+            imageIvi!!.setImageBitmap(getBitmapFromAssets(currentDish!!.image!!))
+            titleTvi!!.text = currentDish!!.title
+            descriptionTvi!!.text = currentDish!!.description
+        }
+    }
+
+    private fun enabledBack() {
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+    }
+
+
+    fun getBitmapFromAssets(fileName: String): Bitmap {
+        val assetManager = assets
+
+        var istr: InputStream? = null
+        try {
+            istr = assetManager.open(fileName)
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+
+        return BitmapFactory.decodeStream(istr)
+    }
+
+
 }
 

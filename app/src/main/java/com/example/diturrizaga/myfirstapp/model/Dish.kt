@@ -8,14 +8,11 @@ class Dish :Serializable {
     var description:String? =""
     var image:String? =""
 
-    constructor(){}
-
     constructor(title: String, description: String, image:String){
         this.title = title
         this.description = description
         this.image = image
     }
-
 
 
 }
