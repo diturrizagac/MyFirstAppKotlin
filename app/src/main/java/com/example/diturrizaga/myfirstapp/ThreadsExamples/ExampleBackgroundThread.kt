@@ -1,4 +1,4 @@
-package com.example.diturrizaga.myfirstapp.packageIgnored
+package com.example.diturrizaga.myfirstapp.ThreadsExamples
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

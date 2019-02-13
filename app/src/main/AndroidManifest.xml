@@ -9,22 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".view.controller.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".packageIgnored.FirstKotlinTest"></activity>
-        <activity android:name=".packageIgnored.ExampleBackgroundThread">
+        <activity android:name=".ThreadsExamples.FirstKotlinTest" />
+        <activity android:name=".ThreadsExamples.ExampleBackgroundThread"></activity>
+        <activity
+            android:name=".view.controller.DishListActivity"
+            android:parentActivityName=".view.controller.MainActivity" />
+        <activity
+            android:name=".view.controller.DishDetailsActivity"
+            android:parentActivityName=".view.controller.DishListActivity" />
 
-        </activity>
-        <activity
-            android:name=".DishListActivity"
-            android:parentActivityName=".MainActivity"></activity>
-        <activity
-            android:name=".DishDetailsActivity"
-            android:parentActivityName=".DishListActivity"></activity>
     </application>
 
 </manifest>

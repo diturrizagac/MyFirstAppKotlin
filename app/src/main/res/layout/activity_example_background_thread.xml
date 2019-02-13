@@ -6,7 +6,7 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:gravity="center"
 android:orientation="vertical"
-tools:context=".packageIgnored.ExampleBackgroundThread">
+tools:context=".ThreadsExamples.ExampleBackgroundThread">
 
 <Switch
     android:layout_width="wrap_content"

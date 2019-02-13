@@ -1,4 +1,4 @@
-package com.example.diturrizaga.myfirstapp
+package com.example.diturrizaga.myfirstapp.view.controller
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -9,8 +9,7 @@ import android.widget.TextView
 import com.example.diturrizaga.myfirstapp.model.Dish
 import java.io.IOException
 import java.io.InputStream
-import android.content.Intent
-
+import com.example.diturrizaga.myfirstapp.R
 
 
 class DishDetailsActivity : AppCompatActivity(){
@@ -44,18 +43,12 @@ class DishDetailsActivity : AppCompatActivity(){
     }
 
     private fun populate(){
-
         if (currentDish != null) {
             imageIvi!!.setImageBitmap(getBitmapFromAssets(currentDish!!.image!!))
             titleTvi!!.text = currentDish!!.title
             descriptionTvi!!.text = currentDish!!.description
         }
     }
-
-    private fun enabledBack() {
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-    }
-
 
     fun getBitmapFromAssets(fileName: String): Bitmap {
         val assetManager = assets

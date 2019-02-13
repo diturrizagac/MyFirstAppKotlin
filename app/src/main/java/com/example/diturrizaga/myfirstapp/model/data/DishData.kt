@@ -1,8 +1,8 @@
-package com.example.diturrizaga.myfirstapp.data
+package com.example.diturrizaga.myfirstapp.model.data
 
 import com.example.diturrizaga.myfirstapp.model.Dish
 
-class DishData (){
+class DishData {
     companion object {
         val dishList = listOf<Dish>(
                 Dish("Ají de gallina", "El ajiaco es un plato sudamericano, se prepara en Chile, Colombia, Argentina..", "dish_images/ajidegallina.png"),

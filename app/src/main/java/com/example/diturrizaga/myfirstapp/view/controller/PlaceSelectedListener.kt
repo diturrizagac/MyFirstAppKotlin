@@ -1,4 +1,4 @@
-package com.example.diturrizaga.myfirstapp
+package com.example.diturrizaga.myfirstapp.view.controller
 
 import com.example.diturrizaga.myfirstapp.model.Dish
 
