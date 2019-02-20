@@ -16,12 +16,16 @@ class DishData {
                 Dish("Ceviche", "Lorem ipsum dolor sit amet, aliquam sodales at morbi vehicula, tristique pede, ac nibh. Vel rutrum no", "dish_images/ceviche.png")
         )
 
-        fun getAllDishes(): List<Dish>{
-            return dishList
-        }
-
-
+        val dishListUrl = listOf<Dish>(
+                Dish("Ají de gallina", "El ajiaco es un plato sudamericano, se prepara en Chile, Colombia, Argentina..", "https://i.imgur.com/tKYhMCW.png"),
+                Dish("Ceviche", "Lorem ipsum dolor sit ametadipiscing etiam eu et nisl.", "https://i.imgur.com/dDzudMa.png"),
+                Dish("Carapulcra", "La carapulcra es un delicioso ejemplar proveniente de de chincha; pero en Perú..", "https://i.imgur.com/QRkw7RU.png"),
+                Dish("Aguadito", "Otro platillo de larga data, una sopa espesa contradictoriamente a su nombre..", "https://i.imgur.com/OG7cDHZ.png"),
+                Dish("Arroz con Pato", "El ajiaco es un plato sudamericano, se prepara en Chile, Colombia, Argentina..", "https://i.imgur.com/mrAODIJ.png"),
+                Dish("Lomo Saltado", "El lomo saltado estilo de preparación proveniente del sur en Perú", "https://i.imgur.com/tPwNTnh.png"),
+                Dish("Causa Limena", "Lorem ipsum dolor sit amet, aliquam sodales at morbi vehicula, ", "https://i.imgur.com/9FNJjoV.png"),
+                Dish("Menestron", "Lorem ipsum dolor sit amet, aliquam sodales at morbi vehicula, tristique pede, ac nibh. Vel rutrum nostc", "https://i.imgur.com/EoJR4aU.png"),
+                Dish("Ceviche", "Lorem ipsum dolor sit amet, aliquam sodales at morbi vehicula, tristique pede, ac nibh. Vel rutrum no", "https://i.imgur.com/dDzudMa.png")
+        )
     }
-
-
 }

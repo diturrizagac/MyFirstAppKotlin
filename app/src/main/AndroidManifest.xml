@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.diturrizaga.myfirstapp">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,14 +18,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".ThreadsExamples.FirstKotlinTest" />
-        <activity android:name=".ThreadsExamples.ExampleBackgroundThread"></activity>
+        <activity android:name=".ThreadsExamples.ExampleBackgroundThread">
+        </activity>
         <activity
             android:name=".view.controller.DishListActivity"
             android:parentActivityName=".view.controller.MainActivity" />
         <activity
             android:name=".view.controller.DishDetailsActivity"
             android:parentActivityName=".view.controller.DishListActivity" />
+        <activity android:name=".ThreadsExamples.ExampleJavaAsynctask">
 
+        </activity>
     </application>
 
 </manifest>

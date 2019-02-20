@@ -35,7 +35,7 @@ class DishDetailsActivity : AppCompatActivity(){
     }
 
     private fun ui(){
-        //enabledBack()
+
         titleTvi = findViewById(R.id.dishTitleDetailTv)
         descriptionTvi = findViewById(R.id.dishDescDetailTv)
         imageIvi = findViewById(R.id.dishImageDetailIv)

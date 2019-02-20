@@ -3,6 +3,8 @@ package com.example.diturrizaga.myfirstapp.view.adapter
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.media.Image
+import android.os.NetworkOnMainThreadException
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,7 +21,6 @@ class DishAdapter : BaseAdapter {
 
     var context: Context? = null
     var listDishes: List<Dish>? = null
-    var listener: PlaceSelectedListener? = null
 
     constructor(mDishes: List<Dish>, mContext: Context) {
         listDishes = mDishes
@@ -49,11 +50,10 @@ class DishAdapter : BaseAdapter {
 
         titleDishTv.text = dishToShow.title
         descDishTv.text = dishToShow.description
-        imageDishIv.setImageBitmap(getBitmapFromAssets(dishToShow.image!!))
+        //imageDishIv.setImageBitmap(getBitmapFromAssets(dishToShow.image!!))
+        getBitmapFromUrl(dishToShow.image!!, imageDishIv)
         return view
     }
-
-
 
     fun getBitmapFromAssets(fileName: String): Bitmap {
         val assetManager = context!!.assets
@@ -66,5 +66,24 @@ class DishAdapter : BaseAdapter {
         }
 
         return BitmapFactory.decodeStream(istr)
+    }
+
+
+    fun getBitmapFromUrl(url:String, imageToDisplay: ImageView){
+        val mRunnable = Runnable {
+            var istr: InputStream? = null
+            try {
+                istr = java.net.URL(url).openStream()
+                val bitmap = BitmapFactory.decodeStream(istr)
+                imageToDisplay.post { // executed into UI thread
+                    imageToDisplay.setImageBitmap(bitmap)
+                }
+            } catch (e: IOException) {
+                e.printStackTrace()
+            } catch (e: NetworkOnMainThreadException) {
+                e.printStackTrace()
+            }
+        }
+        Thread(mRunnable).start()
     }
 }
